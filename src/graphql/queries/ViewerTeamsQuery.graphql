@@ -1,0 +1,9 @@
+query ViewerTeamsQuery {
+  viewer {
+    teams {
+      id
+      name
+      description
+    }
+  }
+}

@@ -17,6 +17,11 @@ const httpLink = new HttpLink({ uri: process.env.REACT_APP_GRAPHQL_ENDPOINT || '
 const client = new ApolloClient({
   link: from([errorLink, authLink, httpLink]),
   cache: new InMemoryCache(),
+  defaultOptions: {
+    query: {
+      fetchPolicy: "cache-first"
+    }
+  }
 })
 
 
