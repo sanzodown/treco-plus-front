@@ -10,12 +10,12 @@ import { InMemoryCache } from "apollo-cache-inmemory"
 import App from "./App"
 import GlobalStyle from "./styles/global"
 import * as serviceWorker from "./serviceWorker"
-import {refreshTokenMiddleware} from "./token-link";
+import { authLink, errorLink} from "./links/";
 
 const httpLink = new HttpLink({ uri: process.env.REACT_APP_GRAPHQL_ENDPOINT || 'http://localhost:4000/graphql' });
 
 const client = new ApolloClient({
-  link: from([refreshTokenMiddleware, httpLink]),
+  link: from([errorLink, authLink, httpLink]),
   cache: new InMemoryCache(),
 })
 

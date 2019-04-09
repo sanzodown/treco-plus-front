@@ -11,28 +11,35 @@ const LoginFormInner = styled.div`
 const LoginForm: FunctionComponent = () => {
   const email = useInput('')
   const password = useInput('')
-  const mutate = useLoginUserMutation({
+  const loginUserMutation = useLoginUserMutation({
     variables: { input: { email: email.value, password: password.value } }
   })
 
   const onSubmit: FormEventHandler = async e => {
     e.preventDefault()
-    const response = await mutate()
+    const response = await loginUserMutation()
     if (response.data && response.data.loginUser) {
       const {token, refreshToken} = response.data.loginUser
       AuthManager.login(token, refreshToken)
-      window.location.reload()
     }
   }
-
 
   return (
     <LoginFormInner>
       <h2>Login</h2>
       <form onSubmit={onSubmit}>
-        <input type="text" {...email} />
-        <input type="password" {...password} />
-        <button type="submit">Submit</button>
+        <div className="form-group">
+          <label htmlFor="email">Email address</label>
+          <input type="email" id="email" className="form-control" placeholder="test@test.com" {...email}/>
+          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone
+            else.
+          </small>
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input type="password" className="form-control" id="password" placeholder="Password" {...password}/>
+        </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </LoginFormInner>
   )
