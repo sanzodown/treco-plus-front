@@ -1,15 +1,22 @@
 import React, {FunctionComponent} from 'react'
 import styled from 'styled-components'
+import {ViewerTeamsQueryTeams} from "../graphql/components";
+
+interface Props {
+  team: ViewerTeamsQueryTeams
+}
 
 const TeamCardInner = styled.div`
   
 `
-
-const TeamCard: FunctionComponent = () => {
-
+const TeamCard: FunctionComponent<Props> = ({ team }) => {
+    const { id, name, description} = team
     return (
         <TeamCardInner>
-            $END$
+          <div className="card" key={id}>
+            <h2>{name}</h2>
+            <p>{description}</p>
+          </div>
         </TeamCardInner>
     )
 }

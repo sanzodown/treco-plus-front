@@ -1,37 +1,37 @@
 import React, {FunctionComponent} from 'react'
 import styled from 'styled-components'
-import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 import AuthManager from "../services/AuthManager";
 import {Redirect} from "@reach/router";
 
-const LOGIN_WIDTH = 600
-const LOGIN_HEIGHT = 330
+const REGISTER_WIDTH = 600
+const REGISTER_HEIGHT = 550
 
-const LoginContainer = styled.div`
+const RegisterContainer = styled.div`
   position: fixed;
-  left: calc(50% - ${LOGIN_WIDTH / 2}px);
-  top: calc(50% - ${LOGIN_HEIGHT / 2}px);
+  left: calc(50% - ${REGISTER_WIDTH / 2}px);
+  top: calc(50% - ${REGISTER_HEIGHT / 2}px);
   & .card {
-    width: ${LOGIN_WIDTH}px;
-    height: ${LOGIN_HEIGHT}px;
+    width: ${REGISTER_WIDTH}px;
+    height: ${REGISTER_HEIGHT}px;
   }
 `
 
-const Login: FunctionComponent = () => {
+const Register: FunctionComponent = () => {
   if(AuthManager.isLoggedIn) {
     return <Redirect to="/" noThrow/>
   }
   return (
     <div className="container">
-      <LoginContainer>
+      <RegisterContainer>
         <div className="card">
           <div className="card-body">
-            <LoginForm/>
+            <RegisterForm/>
           </div>
         </div>
-      </LoginContainer>
+      </RegisterContainer>
     </div>
   )
 }
 
-export default Login
+export default Register

@@ -4,12 +4,12 @@ import {useViewerQuery} from "./graphql/components";
 import Route from "./components/Route";
 import Home from "./views/Home";
 import About from "./views/About";
-import {Link, LinkGetProps, Redirect, Router} from "@reach/router";
+import {Redirect, Router} from "@reach/router";
 import Teams from "./views/Teams";
 import Login from "./views/Login";
-import AuthManager from "./services/AuthManager";
 import ProtectedRoute from "./components/ProtectedRoute";
 import useViewer from "./hooks/useViewer";
+import Register from "./views/Register";
 
 const AppInner = styled.div`
   
@@ -22,6 +22,7 @@ const App: FunctionComponent = () => {
     <AppInner>
       <Router>
         <Route component={Login} path="/login"/>
+        <Route component={Register} path="/register"/>
         <ProtectedRoute component={Home} path="/"/>
         <ProtectedRoute component={Teams} path="/teams"/>
         <Route component={About} path="/about"/>
