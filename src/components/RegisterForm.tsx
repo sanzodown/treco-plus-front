@@ -79,6 +79,7 @@ const RegisterForm: FunctionComponent = () => {
               Object.keys(errors).map(field => <p key={field} className="text-danger">{errors[field].message}</p>)
             }
             <button type="submit" disabled={hasErrors} className="btn btn-primary">Submit</button>
+            <a href="/login" className="btn btn-primary">Login</a>
           </form>
         </RegisterFormInner>
     )

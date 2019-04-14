@@ -10,6 +10,7 @@ import Login from "./views/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import useViewer from "./hooks/useViewer";
 import Register from "./views/Register";
+import Boards from "./views/Boards";
 
 const AppInner = styled.div`
   
@@ -25,6 +26,7 @@ const App: FunctionComponent = () => {
         <Route component={Register} path="/register"/>
         <ProtectedRoute component={Home} path="/"/>
         <ProtectedRoute component={Teams} path="/teams"/>
+        <ProtectedRoute component={Boards} path="/team/:teamId/boards"/>
         <Route component={About} path="/about"/>
         <Redirect from="*" to="/" noThrow/>
       </Router>

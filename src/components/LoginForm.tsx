@@ -1,7 +1,7 @@
 import React, {FormEventHandler, FunctionComponent} from 'react'
 import styled from 'styled-components'
 import useInput from "@rooks/use-input";
-import {LoginUserMutationLoginUser, useLoginUserMutation} from "../graphql/components";
+import {useLoginUserMutation} from "../graphql/components";
 import AuthManager from "../services/AuthManager";
 
 const LoginFormInner = styled.div`
@@ -40,6 +40,7 @@ const LoginForm: FunctionComponent = () => {
           <input type="password" className="form-control" id="password" placeholder="Password" {...password}/>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
+        <a href="/register" className="btn btn-primary">Register</a>
       </form>
     </LoginFormInner>
   )

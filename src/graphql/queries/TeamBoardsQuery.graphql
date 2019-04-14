@@ -1,0 +1,14 @@
+query TeamBoardsQuery($input: ID!) {
+  teamBoards(teamId: $input) {
+    id
+    name
+    team {
+      name
+      owner {
+        username
+
+      }
+      description
+    }
+  }
+}
