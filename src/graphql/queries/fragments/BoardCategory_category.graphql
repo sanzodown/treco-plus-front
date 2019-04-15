@@ -1,0 +1,8 @@
+fragment BoardCategory_category on Category {
+  id
+  name
+  position
+  tickets {
+    ... CategoryTicket_ticket
+  }
+}

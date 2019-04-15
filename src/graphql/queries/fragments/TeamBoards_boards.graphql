@@ -1,0 +1,4 @@
+fragment TeamBoards_boards on Board {
+  id
+  name
+}

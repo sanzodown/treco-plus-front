@@ -1,25 +1,27 @@
 import React, {FunctionComponent} from 'react'
 import styled from 'styled-components'
-import {useTeamBoardsQuery} from "../graphql/components";
+import {TeamBoardsBoardsFragment} from "../graphql/components";
+import {Link} from "@reach/router";
 
 const TeamBoardsInner = styled.div`
   
 `
+
 interface Props {
-  teamId: string
+  boards: TeamBoardsBoardsFragment[]
 }
 
-const TeamBoards: FunctionComponent<Props> = ({teamId}) => {
-  const {data} = useTeamBoardsQuery({suspend: true, variables: { input: teamId }})
+const TeamBoards: FunctionComponent<Props> = ({boards}) => {
 
   return (
     <TeamBoardsInner>
       <div className="container">
-        {data && data.teamBoards && (
-          data.teamBoards.map(board =>
-            <h2>{board ? board.name : ''}</h2>
+        {
+          boards.map(board =>
+            <h2>
+              <Link to={`board/${board.id}`}>{board.name}</Link>
+            </h2>
           )
-        )
         }
       </div>
     </TeamBoardsInner>

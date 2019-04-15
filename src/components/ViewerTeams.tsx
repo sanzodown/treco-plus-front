@@ -16,7 +16,6 @@ const ViewerTeams: FunctionComponent = () => {
         {data && data.viewer && data.viewer.teams!.map(team =>
           <TeamCard key={team!.id} team={team!}/>
         )}
-
       </div>
     </ViewerTeamsInner>
   )

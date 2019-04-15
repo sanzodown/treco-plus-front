@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useInput from "@rooks/use-input";
 import { useRegisterUserMutation} from "../graphql/components";
 import AuthManager from "../services/AuthManager";
+import {Link} from "@reach/router";
 
 interface FormErrors {
   [key: string]: {
@@ -79,7 +80,7 @@ const RegisterForm: FunctionComponent = () => {
               Object.keys(errors).map(field => <p key={field} className="text-danger">{errors[field].message}</p>)
             }
             <button type="submit" disabled={hasErrors} className="btn btn-primary">Submit</button>
-            <a href="/login" className="btn btn-primary">Login</a>
+            <Link to="/login" className="btn btn-primary">Login</Link>
           </form>
         </RegisterFormInner>
     )

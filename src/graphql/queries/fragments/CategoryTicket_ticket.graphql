@@ -1,0 +1,14 @@
+fragment CategoryTicket_ticket on Ticket {
+  id
+  author {
+    id
+    username
+    email
+  }
+  completion
+  name
+  content
+  position
+  priority
+  endDate
+}

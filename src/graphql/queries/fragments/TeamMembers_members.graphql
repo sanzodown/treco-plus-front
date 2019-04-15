@@ -1,0 +1,5 @@
+fragment TeamMembers_members on User {
+  id
+  email
+  username
+}

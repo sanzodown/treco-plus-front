@@ -1,0 +1,14 @@
+query TeamQuery($id: ID!) {
+  node(id: $id) {
+    ... on Team {
+      name
+      description
+      members {
+        ... TeamMembers_members
+      }
+      boards {
+        ... TeamBoards_boards
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query BoardQuery($id: ID!) {
+  node(id: $id) {
+    ... on Board {
+      id
+      name
+      categories {
+        ... BoardCategory_category
+      }
+    }
+  }
+}
