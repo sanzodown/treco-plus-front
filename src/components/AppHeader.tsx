@@ -23,13 +23,12 @@ const AppHeader: FunctionComponent = () => {
               <li className="nav-item">
                 <Link to="/teams" className="nav-link">Teams</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/about" className="nav-link">About</Link>
-              </li>
-              {isLoggedIn && <li className="nav-item">
-                <button className="btn btn-danger" onClick={AuthManager.logout}>Logout</button>
-              </li>}
             </ul>
+            <div style={{flexGrow:1}}></div>
+            {isLoggedIn &&
+            <button className="btn btn-danger" onClick={AuthManager.logout}>
+              Logout
+            </button>}
           </div>
         </div>
       </nav>

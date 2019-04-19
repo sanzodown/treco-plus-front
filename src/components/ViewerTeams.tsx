@@ -12,7 +12,7 @@ const ViewerTeams: FunctionComponent = () => {
 
   return (
     <ViewerTeamsInner>
-      <div className="container">
+      <div className="container team-card">
         {data && data.viewer && data.viewer.teams!.map(team =>
           <TeamCard key={team!.id} team={team!}/>
         )}

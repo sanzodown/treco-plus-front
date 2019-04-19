@@ -5,7 +5,7 @@ import AuthManager from "../services/AuthManager";
 import {Redirect} from "@reach/router";
 
 const LOGIN_WIDTH = 600
-const LOGIN_HEIGHT = 330
+const LOGIN_HEIGHT = 350
 
 const LoginContainer = styled.div`
   position: fixed;

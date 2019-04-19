@@ -16,13 +16,19 @@ const TeamBoards: FunctionComponent<Props> = ({boards}) => {
   return (
     <TeamBoardsInner>
       <div className="container">
-        {
-          boards.map(board =>
-            <h2>
-              <Link to={`board/${board.id}`}>{board.name}</Link>
-            </h2>
-          )
-        }
+        <div className="row">
+          {
+            boards.map(board =>
+              <div className="card col-lg-4">
+                <h2>
+                  <Link to={`board/${board.id}`}>
+                    {board.name}
+                  </Link>
+                </h2>
+              </div>
+            )
+          }
+        </div>
       </div>
     </TeamBoardsInner>
   )

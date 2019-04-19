@@ -18,6 +18,7 @@ const Team: FunctionComponent<Props> = ({teamId}) => {
   return (
     <Page>
       <TeamInner>
+        <h1>{data!.node!.name}</h1>
         <Suspense fallback={<div>loading</div>}>
           <TeamBoards boards={data!.node!.boards} />
         </Suspense>

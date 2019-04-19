@@ -5,7 +5,7 @@ import {useLoginUserMutation} from "../graphql/components";
 import AuthManager from "../services/AuthManager";
 
 const LoginFormInner = styled.div`
-  
+
 `
 
 const LoginForm: FunctionComponent = () => {

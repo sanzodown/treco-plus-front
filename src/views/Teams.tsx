@@ -4,7 +4,7 @@ import Page from "../layouts/Page";
 import ViewerTeams from "../components/ViewerTeams";
 
 const TeamsInner = styled.div`
-  
+
 `
 
 const Teams: FunctionComponent = () => {

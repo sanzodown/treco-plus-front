@@ -4,20 +4,17 @@ import {ViewerTeamsQueryTeams} from "../graphql/components";
 import {Link} from "@reach/router";
 
 interface Props {
-  team: ViewerTeamsQueryTeams
+  team: ViewerTeamsQueryTeams,
 }
 
 const TeamCardInner = styled.div`
-  
 `
 const TeamCard: FunctionComponent<Props> = ({ team }) => {
     const { id, name, description} = team
     return (
-        <TeamCardInner>
-          <div className="card" key={id}>
+        <TeamCardInner className="card" key={id}>
             <h2><Link to={`/team/${id}`}>{name}</Link></h2>
             <p>{description}</p>
-          </div>
         </TeamCardInner>
     )
 }
